@@ -29,6 +29,13 @@ public class CalculatorController {
             model.addAttribute("operand1", first_operand);
             model.addAttribute("operand2", second_operand);
         }
+        if (operator.equals(sub)) {
+            model.addAttribute("expression", "subtraction");
+            model.addAttribute("result", first_operand - second_operand);
+            model.addAttribute("operand1", first_operand);
+            model.addAttribute("operand2", second_operand);
+        }
+
         return "index";
     }
 
