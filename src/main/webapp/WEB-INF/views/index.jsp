@@ -7,8 +7,8 @@
   <body>
   <h1>calculator</h1>
   <form method="post">
-    <input type="number" name="first_operand" value=${operand1}>
-    <input type="number" name="second_operand"value=${operand2}>
+    <input type="text" name="first_operand" value=${operand1}>
+    <input type="text" name="second_operand"value=${operand2}>
     <br><br>
     <input type="submit" value="add(+)" name="operator"/>
     <input type="submit" value="sub(-)" name="operator">
