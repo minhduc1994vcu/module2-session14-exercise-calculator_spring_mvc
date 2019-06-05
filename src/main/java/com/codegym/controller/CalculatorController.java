@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/calculator")
 public class CalculatorController {
     final String add = "add(+)";
     final String sub = "sub(-)";
@@ -21,8 +21,10 @@ public class CalculatorController {
         return "index";
     }
     @PostMapping
-    public String calculate(Model model, @RequestParam("operator") String operator, @RequestParam("first_operand") int first_operand,
-                            @RequestParam("second_operand") int second_operand) {
+    public String calculate(Model model, @RequestParam("operator") String operator, @RequestParam("first_operand") double first_operand,
+                            @RequestParam("second_operand") double second_operand) {
+//        double num1 = Double.parseDouble(first_operand);
+//        double num2 = Double.parseDouble(second_operand);
         if (operator.equals(add)) {
             model.addAttribute("expression", "addition");
             model.addAttribute("result", first_operand + second_operand);
@@ -43,7 +45,7 @@ public class CalculatorController {
         }
         if (operator.equals(div)) {
             model.addAttribute("expression", "division");
-            model.addAttribute("result", first_operand * second_operand);
+            model.addAttribute("result", first_operand / second_operand);
             model.addAttribute("operand1", first_operand);
             model.addAttribute("operand2", second_operand);
         }
